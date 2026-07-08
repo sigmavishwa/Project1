@@ -24,6 +24,7 @@
       margin: 0;
       display: grid;
       place-items: center;
+      padding: 92px 18px 36px;
       overflow: hidden;
       background:
         radial-gradient(circle at 20% 18%, rgba(230, 106, 139, 0.32), transparent 30%),
@@ -31,6 +32,37 @@
         linear-gradient(135deg, #151521 0%, #0c1117 54%, #181020 100%);
       color: var(--ink);
       font-family: Georgia, "Times New Roman", serif;
+    }
+
+    nav {
+      position: fixed;
+      top: 22px;
+      left: 50%;
+      z-index: 5;
+      display: flex;
+      gap: 8px;
+      padding: 8px;
+      border: 1px solid rgba(248, 244, 232, 0.16);
+      background: rgba(16, 16, 24, 0.66);
+      box-shadow: 0 18px 54px rgba(0, 0, 0, 0.28);
+      transform: translateX(-50%);
+      backdrop-filter: blur(18px);
+    }
+
+    nav a {
+      padding: 10px 14px;
+      color: var(--muted);
+      font: 700 0.78rem/1 system-ui, sans-serif;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 180ms ease, background 180ms ease;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--night);
+      background: var(--gold);
     }
 
     body::before,
@@ -183,6 +215,11 @@
   </style>
 </head>
 <body>
+  <nav aria-label="Main navigation">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
   <main aria-label="Fancy Hello World page">
     <div class="sparkles" aria-hidden="true">
       <span></span>
